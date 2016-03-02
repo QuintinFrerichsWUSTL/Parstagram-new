@@ -46,6 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func userDidLogout(){
         let vc = storyboard.instantiateInitialViewController() as! LoginViewController
         window?.rootViewController = vc
+        Parse.initializeWithConfiguration(
+            ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "Instagram"
+                configuration.clientKey = "asdfasdfkjas;ldfja;slfjka;sf"
+                configuration.server = "https://peaceful-depths-78425.herokuapp.com/parse"
+            })
+        )
+
     }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

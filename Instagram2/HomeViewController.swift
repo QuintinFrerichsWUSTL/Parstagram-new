@@ -10,11 +10,22 @@ import UIKit
 import Parse
 class HomeViewController: UIViewController {
 
-    
-    let userDidLogoutNotification = "userDidLogoutNotification"
+    var instaPosts: [Post]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let query = PFQuery(className: "Post")
+        query.orderByDescending("createdAt")
+        query.includeKey("author")
+        query.limit = 20
+        
+        // fetch data asynchronously
+        query.findObjectsInBackgroundWithBlock { (posts: [PFObject]?, error: NSError?) -> Void in
+            if let posts = posts {
 
+            } else {
+                print("failure to get Insta feed")
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -23,10 +34,7 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onLogout(sender: AnyObject) {
-        PFUser.logOut()
-        NSNotificationCenter.defaultCenter().postNotificationName(userDidLogoutNotification, object: nil)
-    }
+ 
     
     
 
