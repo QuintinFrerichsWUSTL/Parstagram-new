@@ -11,7 +11,6 @@
 		0568FBC81C8670560057729A /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0568FBC71C8670560057729A /* CaptureViewController.swift */; };
 		0568FBCA1C8670CA0057729A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0568FBC91C8670CA0057729A /* ProfileViewController.swift */; };
 		0568FBCC1C867BD50057729A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0568FBCB1C867BD50057729A /* TableViewCell.swift */; };
-		0568FBCE1C867D070057729A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0568FBCD1C867D070057729A /* ViewController.swift */; };
 		059B5F5E1C83C93600743A11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B5F5D1C83C93600743A11 /* AppDelegate.swift */; };
 		059B5F631C83C93600743A11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059B5F611C83C93600743A11 /* Main.storyboard */; };
 		059B5F651C83C93600743A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 059B5F641C83C93600743A11 /* Assets.xcassets */; };
@@ -26,7 +25,6 @@
 		0568FBC71C8670560057729A /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		0568FBC91C8670CA0057729A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0568FBCB1C867BD50057729A /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		0568FBCD1C867D070057729A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../.Trash/ViewController.swift; sourceTree = "<group>"; };
 		059B5F5A1C83C93600743A11 /* Instagram2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		059B5F5D1C83C93600743A11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		059B5F621C83C93600743A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 				059D4E0C1C8783B8000E651B /* Models */,
 				059B5F711C83D32F00743A11 /* View Controllers */,
 				059B5F5D1C83C93600743A11 /* AppDelegate.swift */,
-				0568FBCD1C867D070057729A /* ViewController.swift */,
 				0568FBCB1C867BD50057729A /* TableViewCell.swift */,
 				059B5F611C83C93600743A11 /* Main.storyboard */,
 				059B5F641C83C93600743A11 /* Assets.xcassets */,
@@ -250,7 +247,6 @@
 				059B5F5E1C83C93600743A11 /* AppDelegate.swift in Sources */,
 				059D4E0B1C8783AF000E651B /* Post.swift in Sources */,
 				0568FBC61C86141C0057729A /* HomeViewController.swift in Sources */,
-				0568FBCE1C867D070057729A /* ViewController.swift in Sources */,
 				0568FBCC1C867BD50057729A /* TableViewCell.swift in Sources */,
 				0568FBC81C8670560057729A /* CaptureViewController.swift in Sources */,
 			);
