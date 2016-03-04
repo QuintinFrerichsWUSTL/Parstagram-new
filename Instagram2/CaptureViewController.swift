@@ -15,6 +15,8 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var captionLabel: UITextField!
     var caption: String?
     var pickedImage: UIImage?
+    var originalImage: UIImage?
+    var editedImage: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +31,10 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     @IBAction func onSubmit(sender: AnyObject) {
-         //Post.postUserImage(pickedImage, withCaption: caption, withCompletion: (Bool, NSError?)->Void)
+        caption = captionLabel.text 
+        Post.postUserImage(editedImage, withCaption: caption) { (boolean: Bool, error: NSError?) -> Void in
+            
+        }
     }
 
     @IBAction func onPick(sender: AnyObject) {
@@ -41,9 +46,8 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
    func imagePickerController(picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-            let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-            let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
-            caption = captionLabel.text
+            originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
             if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
                 pictureView.contentMode = .ScaleAspectFit
                 pictureView.image = pickedImage

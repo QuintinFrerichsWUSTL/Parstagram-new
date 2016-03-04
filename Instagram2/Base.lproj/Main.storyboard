@@ -101,6 +101,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="cXt-8K-6xK"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="bRP-S2-7Ar" id="iKc-0x-MBe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dq6-25-zZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

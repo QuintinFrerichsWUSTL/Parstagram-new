@@ -7,16 +7,29 @@
 //
 
 import UIKit
-
+import Parse
 class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var pictureView: UIImageView!
     
     @IBOutlet weak var captionLabel: UILabel!
-
+    var post: PFObject! {
+        didSet{
+            if post.imageCaption != nil{
+                captionLabel.text = post.imageCaption
+            }
+            else{
+                captionLabel.text = ""
+            }
+            if post.image != nil{
+                pictureView.image = post.image
+            }
+            
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

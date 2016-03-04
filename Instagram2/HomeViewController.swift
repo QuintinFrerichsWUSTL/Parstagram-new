@@ -8,8 +8,9 @@
 
 import UIKit
 import Parse
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
     var instaPosts: [Post]?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class HomeViewController: UIViewController {
         // fetch data asynchronously
         query.findObjectsInBackgroundWithBlock { (posts: [PFObject]?, error: NSError?) -> Void in
             if let posts = posts {
-
+                
             } else {
                 print("failure to get Insta feed")
             }
@@ -33,7 +34,23 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        if instaPosts != nil{
+            return instaPosts!.count
+        }
+        else{
+            return 0
+        }
+    }
     
+    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath) as! TableViewCell
+        cell.post = instaPosts![indexPath.row]
+        return cell 
+    }
  
     
     
