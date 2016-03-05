@@ -13,7 +13,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var pictureView: UIImageView!
     
     @IBOutlet weak var captionLabel: UILabel!
-    var post: PFObject! {
+    var post: Post! {
         didSet{
             if post.imageCaption != nil{
                 captionLabel.text = post.imageCaption
