@@ -14,6 +14,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var instaPosts: [Post]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         let query = PFQuery(className: "Post")
         query.orderByDescending("createdAt")
         query.includeKey("author")
