@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseUI 
 class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var pictureView: UIImageView!
@@ -46,8 +47,8 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
    func imagePickerController(picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-            originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-            editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+            originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+            editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
             if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
                 pictureView.contentMode = .ScaleAspectFit
                 pictureView.image = pickedImage
