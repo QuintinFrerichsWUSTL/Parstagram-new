@@ -78,7 +78,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="125.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvv-q3-EJ1">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvv-q3-EJ1" customClass="PFImageView">
                                                     <rect key="frame" x="8" y="8" width="124" height="109.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1D-jo-qkR">
@@ -91,7 +91,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="captionLabel" destination="p1D-jo-qkR" id="RS3-DY-ccA"/>
-                                            <outlet property="pictureView" destination="nvv-q3-EJ1" id="XAW-zY-TDy"/>
+                                            <outlet property="pictureView" destination="nvv-q3-EJ1" id="9hs-DT-C7D"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

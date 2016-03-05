@@ -86,8 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Instagram2/Bolts.framework"
   install_framework "Pods-Instagram2/Parse.framework"
+  install_framework "Pods-Instagram2/ParseUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Instagram2/Bolts.framework"
   install_framework "Pods-Instagram2/Parse.framework"
+  install_framework "Pods-Instagram2/ParseUI.framework"
 fi

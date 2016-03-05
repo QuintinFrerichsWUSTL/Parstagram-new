@@ -8,23 +8,17 @@
 
 import UIKit
 import Parse
+import ParseUI
 class TableViewCell: UITableViewCell {
     
-    @IBOutlet weak var pictureView: UIImageView!
+
+    @IBOutlet weak var pictureView: PFImageView!
     
     @IBOutlet weak var captionLabel: UILabel!
-    var post: Post! {
-        didSet{
-            if post.imageCaption != nil{
-                captionLabel.text = post.imageCaption
-            }
-            else{
-                captionLabel.text = ""
-            }
-            if post.image != nil{
-                pictureView.image = post.image
-            }
-            
+        var post: PFObject! {
+        didSet {
+        self.pictureView.file = post["image"] as? PFFile
+        self.pictureView.loadInBackground()
         }
     }
     override func awakeFromNib() {

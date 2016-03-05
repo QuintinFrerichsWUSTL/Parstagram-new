@@ -22,7 +22,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // fetch data asynchronously
         query.findObjectsInBackgroundWithBlock { (posts: [PFObject]?, error: NSError?) -> Void in
             if let posts = posts {
-                
+                self.instaPosts = posts.map({ (post: PFObject) -> Post in
+                    return Post(post: post)
+                    })
+                self.tableView.reloadData()
             } else {
                 print("failure to get Insta feed")
             }

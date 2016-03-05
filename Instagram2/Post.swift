@@ -10,7 +10,7 @@ import UIKit
 import Parse
 class Post: NSObject {
     var imageCaption: String?
-    var image: UIImage?
+    var imageFile: PFFile!
     class func postUserImage(image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
         let post = PFObject(className: "Post")
         post["media"] = getPFFileFromImage(image)
@@ -22,8 +22,8 @@ class Post: NSObject {
         post.saveInBackgroundWithBlock(completion)
     }
     init(post: PFObject){
-    image = post["media"] as! UIImage
-    imageCaption = post["caption"] as! String
+    imageFile = post["media"] as? PFFile
+    imageCaption = post["caption"] as? String
     }
     class func getPFFileFromImage(image: UIImage?) -> PFFile? {
         // check if image is not nil
