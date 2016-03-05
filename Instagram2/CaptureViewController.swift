@@ -36,6 +36,7 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         Post.postUserImage(editedImage, withCaption: caption) { (boolean: Bool, error: NSError?) -> Void in
             
         }
+        
     }
 
     @IBAction func onPick(sender: AnyObject) {
