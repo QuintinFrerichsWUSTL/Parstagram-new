@@ -15,9 +15,10 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var pictureView: PFImageView!
     
     @IBOutlet weak var captionLabel: UILabel!
-        var post: PFObject! {
+        var post: Post! {
         didSet {
-        self.pictureView.file = post["image"] as? PFFile
+        self.pictureView.file = post.imageFile
+        self.captionLabel.text = post.imageCaption
         self.pictureView.loadInBackground()
         }
     }
