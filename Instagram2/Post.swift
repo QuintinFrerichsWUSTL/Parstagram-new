@@ -18,7 +18,6 @@ class Post: NSObject {
         post["caption"] = caption
         post["likesCount"] = 0
         post["commentsCount"] = 0
-
         post.saveInBackgroundWithBlock(completion)
     }
     init(post: PFObject){
